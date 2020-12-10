@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivo登录</title>
+    <link rel="stylesheet" href="../dist/css/main.min.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+
+</head>
+
+<body>
+    <div class="center">
+        <div class="mid">
+            <img src="../images/vivo.png" alt="">
+            <h2>账号登录</h2>
+            <input type="text" id="userNameLogin" placeholder="请输入用户名">
+            <input type="password" id="pwdLogin" placeholder="请输入密码">
+            <button id="loginBtn">登录</button>
+            <button>注册vivo账号</button>
+        </div>
+    </div>
+</body>
+<script>
+    var user = document.querySelector("#userNameLogin");
+    var pwd = document.querySelector("#pwdLogin");
+    var loginBtn = document.querySelector("#loginBtn");
+    var obj = {
+            username: user.value,
+            password: pwd.value
+        }
+    loginBtn.addEventListener("click", clickHandler);
+
+    var ids;
+    function clickHandler() {
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", readyHandler);
+        xhr.open("POST", "http://192.168.43.28:4006/login");
+        xhr.send(JSON.stringify(obj));
+
+        function readyHandler() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                clearTimeout(ids);
+                setCookie();
+                
+                
+                var res = JSON.parse(xhr.response);
+                ids = setTimeout(function () {
+                    location.href = "../index.html";
+                }, 3000);
+            }
+        }
+    }
+    function setCookie(){
+        document.cookie = `user=${user.value}`;
+    }
+</script>
+
+</html>

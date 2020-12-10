@@ -1,0 +1,99 @@
+接口
+    地址：http://10.9.65.252:4006
+    发送方式：POST
+    数据格式：JSON
+
+1、显示商品列表
+    req:
+    url:/goodList
+
+    res:
+   {
+       type:"goodList",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+   }
+2、显示购物车列表
+    req：
+      url:/shoppingList
+
+     res:
+     {
+         type:"shoppingList",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+     }
+3、添加商品
+    req:
+      url:/add
+      {
+          id:1001,
+      }
+    res:
+     {
+         type:"add",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+     }
+4、修改商品数量
+     req:
+      url:/update
+      {
+          id:1001,
+          num:2
+      }
+    res:
+     {
+         type:"update",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+     } 
+5、删除商品
+    req:
+      url:/remove
+      [1001,1002]
+    res:
+    {
+         type:"remove",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+     } 
+6、多选商品
+    req:
+      url:/select
+      [
+          {id:1001,select:true},
+          {id:1002,select:true},
+          {id:1003,select:true},
+          {id:1004,select:true},
+      ]
+    res:
+    {
+         type:"select",
+       list:[
+        {id:1001,....}
+        {id:1002,....}
+        {id:1003,....}
+        {id:1004,....}
+        ]
+     } 

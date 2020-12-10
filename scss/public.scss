@@ -1,0 +1,57 @@
+//头部版心
+.header-con{
+    width: 1230px;
+    margin: 0 auto;
+}
+//内容版心
+.main{
+    width: 1200px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearFixed:after {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+@mixin saleArea {
+        height: 106px;
+        font-size: 24px;
+        color: #333;
+        line-height: 130px;
+        text-align: center;
+}
+@mixin shopButton {
+    display: inline-block;
+    width: 170px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 27px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+@mixin tab {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    cursor: pointer;
+    z-index: 3;
+    vertical-align: middle;
+    position: absolute;
+    left: 32px;
+}

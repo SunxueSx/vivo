@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivo注册</title>
+    <link rel="stylesheet" href="../dist/css/main.min.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+</head>
+
+<body>
+    <div class="center">
+        <div class="mid">
+            <img src="../images/vivo.png" alt="">
+            <h2>账号注册</h2>
+            <input type="text" id="userNameRegister" placeholder="请输入用户名">
+            <input type="password" id="pwdRegister" placeholder="请输入密码">
+            <button id="registerBtn">注册vivo账号</button>
+            <button>登录</button>
+        </div>
+    </div>
+</body>
+<script>
+    var user = document.querySelector("#userNameRegister");
+    var pwd = document.querySelector("#pwdRegister");
+    var registerBtn = document.querySelector("#registerBtn");
+
+    registerBtn.addEventListener("click", clickHandler);
+   
+    function clickHandler() {
+
+        var obj = {
+            username: user.value,
+            password: pwd.value
+        }
+        var ids;
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", readyHandler);
+        xhr.open("POST", "http://192.168.43.28:4006/register");
+        xhr.send(JSON.stringify(obj));
+        function readyHandler() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                clearTimeout(ids);
+                ids = setTimeout(function () {
+                    location.href = "./login.html";
+                }, 3000);
+                console.log(JSON.parse(xhr.response));
+            }
+        }
+    }
+</script>
+</html>

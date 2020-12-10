@@ -1,0 +1,208 @@
+@import "public";
+.shooppingCart {
+    background-color: #f5f5f5;
+    .shop {
+        .shopping {
+            position: relative;
+            height: 66px;
+            margin-bottom: 19px;
+            line-height: 66px;
+            color: #333;
+            font-size: 20px;
+            // font-weight: 400;
+            background-color: #fff;
+            text-align: center;
+            span{
+                position: absolute;
+                top: 0px;
+                left:500px;
+            }
+            a {
+                position: absolute;
+                top: 0px;
+                right: 35px;
+                color: #333;
+                font-size: 14px;
+            }
+        }
+        .shopOrder {
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                table-layout: fixed;
+                text-align: center;
+                vertical-align: middle;
+                thead {
+                    height: 64px;
+                    line-height: 64px;
+                    font-size: 14px;
+                    color: #686868;
+                    tr{
+                        background-color: #fff;
+                        th {
+                            position: relative;
+                            input {
+                                @include tab;
+                                top: 21px;
+                            }
+                        }
+                        th:first-child {
+                            width: 106px;
+                        }
+                        th:nth-child(2){
+                            width: 100px;
+                        }
+
+                        th:nth-child(3) {
+                            width: 250px;
+                        }
+                        th:nth-child(4) {
+                            width: 168px;
+                            padding: 0 20px;
+                            text-align: center;
+                        }
+                        th:nth-child(5) {
+                            width: 111px;
+                        }
+                        th:nth-child(6) {
+                            width: 111px;
+                        }
+                        th:nth-child(7) {
+                            width: 111px;
+                        }
+                        th:nth-child(8) {
+                            width: 111px;
+                        }
+                        th:last-child {
+                            width: 111px;
+                        }
+                    }
+                   
+                }
+                tbody {
+                    margin-top: 2px;
+                    position: relative;
+                    tr {
+                        height: 152px;
+                        border-top: 2px solid #f7f7f5;
+                        background-color: #fff;
+                        .discountPrice{
+                            width: 111px;
+                        }
+                        td:first-child{
+                            width: 50px;
+                        }
+                        td:nth-child(2){
+                            width: 100px;
+                        }
+                        td:nth-last-child(2){
+                            color: #f51200;
+                        }
+                        td {
+                            position: relative;
+                            input {
+                                @include tab;
+                                top: 65px;
+                            }
+                            color: #666;
+                            img {
+                                width: 100px;
+                                height: 100px;
+                                border: 1px solid #ececec;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cont5 {
+            .saleArea {
+                height: 86px;
+                line-height: 86px;
+                .like {
+                    text-align: left;
+                    margin: 0px;
+                    font-size: 20px;
+                }
+            }
+            .cont6List li {
+                margin-bottom: 10px;
+                i {
+                    font-style: normal;
+                }
+                b {
+                    font-weight: normal;
+                    margin-left: 2px;
+                }
+            }
+            .cartBtn {
+                width: 85px;
+                height: 23px;
+                display: inline-block;
+                line-height: 23px;
+                text-align: center;
+                color: #fff;
+                font-size: 10px;
+                margin: 16px 0 0 104px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: #ff0c53;
+            }
+        }
+        .total {
+            height: 98px;
+            line-height: 98px;
+            background-color: #fff;
+            margin: 19px 0 0px;
+            padding-right: 30px;
+            ul {
+                float: left;
+                li {
+                    float: left;
+                    cursor: pointer;
+                    color: #333;
+                    font-size: 16px;
+                    margin-right: 30px;
+                }
+                li:first-child {
+                    position: relative;
+                    padding-left: 60px;
+                    input {
+                        @include tab;
+                        top: 40px;
+                    }
+                }
+            }
+            .all {
+                width: 755px;
+                height: 100%;
+                div {
+                    line-height: 24px;
+                    padding: 28px 0 0;
+                    margin-right: 25px;
+                    p:first-child {
+                        b {
+                            color: #f04141;
+                            font-weight: normal;
+                        }
+                        span {
+                            font-size: 34px;
+                            color: #f51200;
+                        }
+                    }
+                    p:nth-child(2) {
+                        text-align: right;
+                        color: grey;
+                        font-size: 14px;
+                    }
+                }
+                button {
+                    @include shopButton;
+                    background-color: #ff0c53;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}
